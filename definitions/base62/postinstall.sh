@@ -5,15 +5,6 @@ date > /etc/vagrant_box_build_time
 yum -y erase wireless-tools gtk2 libX11 hicolor-icon-theme avahi freetype bitstream-vera-fonts
 yum -y clean all
 
-wget "http://dl.dropbox.com/u/28598905/centos6/ruby19-1.9.3p0-4.el6.x86_64.rpm"
-wget "http://dl.dropbox.com/u/28598905/centos6/ruby19-devel-1.9.3p0-4.el6.x86_64.rpm"
-
-rpm -i ruby19-1.9.3p0-4.el6.x86_64.rpm
-rm ruby19-1.9.3p0-4.el6.x86_64.rpm
-
-rpm -i ruby19-devel-1.9.3p0-4.el6.x86_64.rpm
-rm ruby19-devel-1.9.3p0-4.el6.x86_64.rpm
-
 echo 'gem: --no-ri --no-rdoc' > ~/.gemrc
 gem install chef
 gem install bundler
@@ -60,3 +51,4 @@ mv /tmp/new_grub.conf /boot/grub/grub.conf
 dd if=/dev/zero of=/tmp/clean || rm /tmp/clean
 
 exit
+
